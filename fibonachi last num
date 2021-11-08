@@ -1,0 +1,17 @@
+function lastFibDigit(n){
+  let memo={}
+
+memo[0]=0;
+memo[1]=1;
+function fib(n) 
+{
+  let sign=n>=0?1:-1;
+  n=Math.abs(n);
+  if(memo[n]!==undefined)
+  return sign*memo[n];
+  return sign*(memo[n] = fib(n-1) + fib(n-2));
+ 
+}
+
+return ~~(fib(n)*0.1%1*10);
+}
